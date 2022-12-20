@@ -1,4 +1,4 @@
-.PHONY: all build
+.PHONY: all build test
 
 all: build
 
@@ -8,3 +8,6 @@ ifeq ($(OS), Windows_NT)
 else
 	go build -o bin/wdp
 endif
+
+test:
+	go run main.go

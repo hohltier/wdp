@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/sho7a/wdp/pkg/wdp"
 	"github.com/spf13/cobra"
 )
 
@@ -23,5 +24,5 @@ func Execute() {
 }
 
 func run(cmd *cobra.Command, args []string) {
-	fmt.Println("Hello World!")
+	wdp.Start()
 }
