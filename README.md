@@ -1,6 +1,6 @@
 # wdp
 
-A simple Web Development Proxy with live reload capability.
+A Web Development Proxy with live reload capabilities.
 
 ## Installation
 
@@ -11,7 +11,12 @@ $ go install github.com/sho7a/wdp@latest
 ## Usage
 
 ```bash
-Coming Soon
+Usage:
+  wdp [flags]
+
+Flags:
+  -h, --help      help for wdp
+  -v, --version   version for wdp
 ```
 
 ### Example
