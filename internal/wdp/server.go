@@ -13,21 +13,28 @@ import (
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/common-nighthawk/go-figure"
 	"github.com/fatih/color"
+	"github.com/gorilla/websocket"
 	"github.com/sho7a/wdp/web"
 )
 
-func Start() {
-	figure.NewFigure("wdp", "small", true).Print()
-	fmt.Println()
+var (
+	sockets  []*websocket.Conn
+	upgrader = websocket.Upgrader{
+		ReadBufferSize:  1024,
+		WriteBufferSize: 1024,
+	}
+)
 
+func Server() {
 	url, err := url.Parse(fmt.Sprintf("http://127.0.0.1:%d", Port))
 	if err != nil {
 		color.Red(err.Error())
 	}
 	proxy := httputil.NewSingleHostReverseProxy(url)
 	proxy.ModifyResponse = modify
+
+	http.HandleFunc("/.wdp/ws", socket)
 
 	fs, err := fs.Sub(web.Static, "static")
 	if err != nil {
@@ -69,4 +76,12 @@ func modify(r *http.Response) error {
 		r.Header.Set("Content-Length", strconv.Itoa(len(b)))
 	}
 	return nil
+}
+
+func socket(w http.ResponseWriter, r *http.Request) {
+	ws, err := upgrader.Upgrade(w, r, nil)
+	if err != nil {
+		color.Red(err.Error())
+	}
+	sockets = append(sockets, ws)
 }

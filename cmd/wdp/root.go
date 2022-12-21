@@ -1,8 +1,10 @@
 package wdp
 
 import (
+	"fmt"
 	"os"
 
+	"github.com/common-nighthawk/go-figure"
 	"github.com/fatih/color"
 	"github.com/sho7a/wdp/internal/wdp"
 	"github.com/spf13/cobra"
@@ -27,5 +29,8 @@ func Execute() {
 }
 
 func run(cmd *cobra.Command, args []string) {
-	wdp.Start()
+	figure.NewFigure("wdp", "small", true).Print()
+	fmt.Println()
+	go wdp.Watcher()
+	wdp.Server()
 }
