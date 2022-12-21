@@ -15,8 +15,11 @@ Usage:
   wdp [flags]
 
 Flags:
-  -h, --help      help for wdp
-  -v, --version   version for wdp
+  -h, --help           help for wdp
+  -l, --listen int     listen port (default open port)
+  -p, --port int       server port (default 80)
+  -v, --version        version for wdp
+  -w, --watch string   watch path (default ".")
 ```
 
 ### Example

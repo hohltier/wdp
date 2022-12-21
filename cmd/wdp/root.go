@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sho7a/wdp/pkg/wdp"
+	"github.com/sho7a/wdp/internal/wdp"
 	"github.com/spf13/cobra"
 )
 
@@ -17,6 +17,9 @@ var cmd = &cobra.Command{
 }
 
 func Execute() {
+	cmd.PersistentFlags().IntVarP(&wdp.Listen, "listen", "l", 0, "listen port (default open port)")
+	cmd.PersistentFlags().IntVarP(&wdp.Port, "port", "p", 80, "server port")
+	cmd.PersistentFlags().StringVarP(&wdp.Watch, "watch", "w", ".", "watch path")
 	if err := cmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)

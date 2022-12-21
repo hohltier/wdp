@@ -10,4 +10,4 @@ else
 endif
 
 test:
-	go run main.go
+	go run main.go -l 3000 -p 8080 -w bin
