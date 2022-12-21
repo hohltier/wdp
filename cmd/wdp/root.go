@@ -1,9 +1,9 @@
 package wdp
 
 import (
-	"fmt"
 	"os"
 
+	"github.com/fatih/color"
 	"github.com/sho7a/wdp/internal/wdp"
 	"github.com/spf13/cobra"
 )
@@ -21,7 +21,7 @@ func Execute() {
 	cmd.PersistentFlags().IntVarP(&wdp.Port, "port", "p", 80, "server port")
 	cmd.PersistentFlags().StringVarP(&wdp.Watch, "watch", "w", ".", "watch path")
 	if err := cmd.Execute(); err != nil {
-		fmt.Println(err)
+		color.Red(err.Error())
 		os.Exit(1)
 	}
 }
