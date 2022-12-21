@@ -29,7 +29,7 @@ func watch() {
 		event := <-w.Event
 		color.Yellow(fmt.Sprintf("File changed: %s", event.Path))
 		for _, socket := range sockets {
-			err := socket.WriteMessage(websocket.BinaryMessage, []byte(event.Name()))
+			err := socket.WriteMessage(websocket.BinaryMessage, []byte{})
 			if err != nil {
 				color.Red(err.Error())
 			}

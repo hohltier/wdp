@@ -9,9 +9,5 @@ else
 	go build -o bin/wdp
 endif
 
-test: build
-ifeq ($(OS), Windows_NT)
-	bin/wdp.exe -l 3000 -p 8080 -w bin
-else
-	./bin/wdp -l 3000 -p 8080 -w bin
-endif
+test:
+	go run main.go -l 3000 -p 8080 -w bin

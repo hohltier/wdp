@@ -13,6 +13,7 @@ function main() {
 
     socket.onmessage = () => {
         console.log("[wdp] reload");
+        socket.close();
         location.reload();
     }
 
