@@ -16,6 +16,7 @@ import (
 	"github.com/fatih/color"
 	"github.com/gorilla/websocket"
 	"github.com/sho7a/wdp/web"
+	"golang.org/x/exp/slices"
 )
 
 var (
@@ -84,4 +85,9 @@ func socket(w http.ResponseWriter, r *http.Request) {
 		color.Red(err.Error())
 	}
 	sockets = append(sockets, ws)
+	_, _, err = ws.ReadMessage()
+	if err != nil {
+		i := slices.Index(sockets, ws)
+		sockets = append(sockets[:i], sockets[i+1:]...)
+	}
 }
