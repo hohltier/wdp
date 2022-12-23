@@ -12,9 +12,10 @@ import (
 
 var cmd = &cobra.Command{
 	Use:     "wdp",
-	Short:   "wdp - Web Development Proxy",
-	Long:    "A Web Development Proxy with live reload capabilities.",
-	Version: "0.1.2",
+	Short:   "wdp",
+	Long:    "Web Development Proxy",
+	Version: "0.1.3",
+	Args:    cobra.NoArgs,
 	Run:     run,
 }
 
@@ -29,7 +30,7 @@ func Execute() {
 }
 
 func run(cmd *cobra.Command, args []string) {
-	figure.NewFigure("wdp", "small", true).Print()
+	figure.NewFigure("wdp", "doom", true).Print()
 	fmt.Println()
 	go wdp.Watcher()
 	wdp.Server()

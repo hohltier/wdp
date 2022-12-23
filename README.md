@@ -1,6 +1,16 @@
-# wdp
+<div align="center">
+    <a href="https://github.com/sho7a/wdp/blob/master/assets/figlet.txt"><img src="https://github.com/sho7a/wdp/raw/master/assets/figlet.png" alt="wdp" width="150" height="auto"></a>
+    <h1>wdp</h1>
+    <a href="https://github.com/sho7a/wdp/tags"><img alt="Version" src="https://img.shields.io/github/v/release/sho7a/wdp?label=Version"></a>
+    <a href="https://github.com/sho7a/wdp/actions/workflows/build.yml"><img alt="Build" src="https://github.com/sho7a/wdp/actions/workflows/build.yml/badge.svg"></a>
+    <a href="https://github.com/sho7a/wdp/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/sho7a/wdp?label=License"></a>
+</div>
 
-A Web Development Proxy with live reload capabilities.
+## Features
+
+- [x] Refresh browser
+- [x] Detect recursive file changes
+- [ ] Hot reload css
 
 ## Installation
 
@@ -40,4 +50,4 @@ $ make
 
 ## License
 
-[Apache License 2.0](LICENSE)
+[Apache License 2.0](https://github.com/sho7a/wdp/blob/master/LICENSE)
