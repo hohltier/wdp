@@ -1,5 +1,5 @@
 <div align="center">
-    <a href="https://github.com/sho7a/wdp/blob/master/assets/figlet.txt"><img src="https://github.com/sho7a/wdp/raw/master/assets/figlet.png" alt="wdp" width="150" height="auto"></a>
+    <a href="https://github.com/sho7a/wdp/blob/master/assets/figlet.txt"><img src="https://github.com/sho7a/wdp/raw/master/assets/figlet.png" alt="wdp" width="300" height="auto"></a>
     <h1>wdp</h1>
     <a href="https://github.com/sho7a/wdp/tags"><img alt="Version" src="https://img.shields.io/github/v/release/sho7a/wdp?label=Version"></a>
     <a href="https://github.com/sho7a/wdp/actions/workflows/build.yml"><img alt="Build" src="https://github.com/sho7a/wdp/actions/workflows/build.yml/badge.svg"></a>
