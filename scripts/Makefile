@@ -5,10 +5,8 @@ all: build
 build:
 ifeq ($(OS), Windows_NT)
 	go build -o bin/wdp.exe
-	upx --best --lzma bin/wdp.exe
 else
 	go build -o bin/wdp
-	upx --best --lzma bin/wdp
 endif
 
 test:
